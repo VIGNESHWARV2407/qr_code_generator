@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>QR Code Generator</title>
+    
+</head>
+
+<body>
+    
+    <h1>QR Code GeneX</h1>
+    <div class="generator">
+        <strong><p>Paste the URL or Enter in Text</p></strong><br>
+    <input type="url" id="input"><br>
+    <span><br></span>
+    <div id="imgQr">
+        <a><img src="" id="qrImg"></a>
+    </div>
+    <button class="generate" onclick="makeQr()">Generate Qr</button>
+
+    </div>
+    
+    
+</body>
+
+<script>
+let imgQr=document.getElementById("imgQr");
+let qrImg=document.getElementById("qrImg");
+let input =document.getElementById("input");
+function makeQr()
+{
+    qrImg.src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + input.value;
+}
+</script>
+
+</html>
